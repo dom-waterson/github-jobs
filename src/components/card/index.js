@@ -14,6 +14,7 @@ const JobInfo = styled.p`
 
 const JobTitle = styled.h1`
   color: ${({ theme }) => theme.textColour};
+  font-size: 1.4rem;
 `;
 
 const Location = styled.p`

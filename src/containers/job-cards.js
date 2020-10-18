@@ -17,6 +17,7 @@ const JobsContainer = styled.div`
 
   @media (min-width: 1000px) {
     grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 30px;
   }
 `;
 
