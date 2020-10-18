@@ -1,21 +1,20 @@
 import React from "react";
-import { ThemeProvider } from "styled-components";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import { lightTheme, darkTheme } from "./theme-styles";
-import { GlobalStyles } from "./global-styles";
-import { Header } from "./components";
-import JobCardsContainer from "./containers/job-cards";
-import { useDarkMode } from "./hooks/useDarkMode";
+import { Job, Home } from "./pages";
 
 function App() {
-  const [theme, toggleTheme] = useDarkMode();
-
   return (
-    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-      <GlobalStyles />
-      <Header toggleTheme={toggleTheme} />
-      <JobCardsContainer />
-    </ThemeProvider>
+    <Router>
+      <Switch>
+        <Route path="/job">
+          <Job />
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
