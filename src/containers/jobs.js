@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components/macro";
+
 import { Card } from "../components";
-import { mockJobs } from "../mock-data";
+import { useJobs } from "../hooks";
 
 const Container = styled.div`
   max-width: 1000px;
@@ -22,11 +23,15 @@ const Container = styled.div`
 `;
 
 export default function JobsContainer() {
+  const jobsQuery = useJobs();
+
   return (
     <Container>
-      {mockJobs.map((job) => (
-        <Card key={job.id} cardInfo={job} />
-      ))}
+      {jobsQuery.isLoading ? (
+        <h1>Loading...</h1>
+      ) : (
+        jobsQuery.data.map((job) => <Card key={job.id} cardInfo={job} />)
+      )}
     </Container>
   );
 }
