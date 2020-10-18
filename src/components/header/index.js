@@ -21,12 +21,12 @@ const Logo = styled.img`
   width: 200px;
 `;
 
-export default function HeaderComponent({ toggleTheme }) {
+export default function HeaderComponent({ children }) {
   return (
     <Header>
       <Content>
         <Logo src={logo} alt="github jobs logo" />
-        <button onClick={toggleTheme}> mode</button>
+        {children}
       </Content>
     </Header>
   );

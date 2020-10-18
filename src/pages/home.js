@@ -1,5 +1,10 @@
 import React from "react";
+import { Jobs } from "../containers";
 
 export default function Home() {
-  return <div>Hello from home page!</div>;
+  return (
+    <div>
+      <Jobs />
+    </div>
+  );
 }

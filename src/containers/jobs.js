@@ -3,7 +3,7 @@ import styled from "styled-components/macro";
 import { Card } from "../components";
 import { mockJobs } from "../mock-data";
 
-const JobsContainer = styled.div`
+const Container = styled.div`
   max-width: 1000px;
   width: 90%;
   margin: 50px auto;
@@ -21,12 +21,12 @@ const JobsContainer = styled.div`
   }
 `;
 
-export default function JobCardsContainer() {
+export default function JobsContainer() {
   return (
-    <JobsContainer>
+    <Container>
       {mockJobs.map((job) => (
         <Card key={job.id} cardInfo={job} />
       ))}
-    </JobsContainer>
+    </Container>
   );
 }
