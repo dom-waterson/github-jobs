@@ -1,11 +1,8 @@
 import React from "react";
 
 import { Card, Grid } from "../components";
-import { useJobs } from "../hooks";
 
-export default function JobsContainer() {
-  const jobsQuery = useJobs();
-
+export default function JobsContainer({ jobsQuery }) {
   return (
     <Grid>
       {jobsQuery.isLoading ? (

@@ -5,14 +5,19 @@ import { Location } from "@styled-icons/icomoon/Location";
 import { Container, Content, Input, Button, Checkbox } from "../components";
 
 export default function JobFilters({ jobsQuery }) {
+  const [state, setState] = React.useState({
+    full_time: false,
+    description: "",
+    location: "",
+  });
+
+  function handleChange(e) {
+    setState({ ...state, [e.target.id]: e.target.value });
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
-    // TODO util function to format form data to url parmas
-    // const parmas formatParmas(formdata)
-
-    // TODO refetch data with formated parmas
-    // jobsQuery.fetch(params)
-    console.log(e);
+    jobsQuery.fetch(state);
   }
 
   return (
@@ -20,16 +25,25 @@ export default function JobFilters({ jobsQuery }) {
       <Content>
         <form onSubmit={handleSubmit} style={{ display: "flex" }}>
           <Input
-            id="search-filter"
+            id="description"
             placeholder="Filter by title, companies, expertise..."
             label={<SearchAlt2 width={20} />}
+            onChange={handleChange}
+            value={state.description}
           />
           <Input
-            id="location-filter"
+            id="location"
             placeholder="Filter by location..."
             label={<Location width={20} />}
+            onChange={handleChange}
+            value={state.location}
           />
-          <Checkbox id="full-time-filter" label="Full Time only" />
+          <Checkbox
+            id="full_time"
+            label="Full Time only"
+            checked={state.full_time}
+            onChange={handleChange}
+          />
           <Button>Search</Button>
         </form>
       </Content>

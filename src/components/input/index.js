@@ -8,6 +8,8 @@ export default function InputComponent({
   label,
   placeholder,
   required,
+  onChange,
+  value,
 }) {
   return (
     <Container>
@@ -19,6 +21,8 @@ export default function InputComponent({
         id={id}
         placeholder={placeholder}
         type="text"
+        onChange={onChange}
+        value={value}
       />
     </Container>
   );
