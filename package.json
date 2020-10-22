@@ -12,7 +12,6 @@
     "react-dom": "^16.14.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
-    "react-styled-toggle": "^1.0.18",
     "styled-components": "^5.2.0",
     "styled-icons": "^10.22.0"
   },

@@ -1,40 +1,20 @@
 import React from "react";
-import styled from "styled-components/macro";
 import moment from "moment";
 
-const Container = styled.div`
-  border-radius: 5px;
-  padding: 20px 50px;
-  background-color: ${({ theme }) => theme.containerBackground};
-`;
-
-const JobInfo = styled.p`
-  color: grey;
-`;
-
-const JobTitle = styled.h1`
-  color: ${({ theme }) => theme.textColour};
-  font-size: 1.4rem;
-`;
-
-const Location = styled.p`
-  color: #2044e4;
-`;
-
-const CompanyName = styled.p`
-  color: grey;
-`;
+import { Content } from "../layout";
+import { JobInfo, JobTitle, CompanyName, Location } from "./styles";
 
 export default function CardComponent({ cardInfo }) {
+  //TODO this needs moving out
   const { type, created_at, company, location, title } = cardInfo;
   return (
-    <Container>
+    <Content>
       <JobInfo>
         {moment(Date.parse(created_at)).fromNow()} &bull; {type}
       </JobInfo>
       <JobTitle>{title}</JobTitle>
       <CompanyName>{company}</CompanyName>
       <Location>{location}</Location>
-    </Container>
+    </Content>
   );
 }

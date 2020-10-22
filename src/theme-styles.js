@@ -1,12 +1,14 @@
 export const themes = {
   dark: {
-    body: "#1C2138",
-    containerBackground: "#4F5D9C",
+    body: "#0e182a",
+    containerBackground: "#132035",
+    containerBorder: "#384357",
     textColour: "#fff",
   },
   light: {
-    body: "#C2C8E0",
-    containerBackground: "#fff",
+    body: "#fff",
+    containerBackground: "#f0f2f7",
+    containerBorder: "#d8dee6",
     textColour: "#000",
   },
 };
