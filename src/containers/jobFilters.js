@@ -4,9 +4,14 @@ import { Location } from "@styled-icons/icomoon/Location";
 
 import { Container, Content, Input, Button, Checkbox } from "../components";
 
-export default function JobFilters() {
+export default function JobFilters({ jobsQuery }) {
   function handleSubmit(e) {
     e.preventDefault();
+    // TODO util function to format form data to url parmas
+    // const parmas formatParmas(formdata)
+
+    // TODO refetch data with formated parmas
+    // jobsQuery.fetch(params)
     console.log(e);
   }
 
